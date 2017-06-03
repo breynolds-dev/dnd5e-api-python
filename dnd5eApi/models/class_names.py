@@ -14,10 +14,11 @@ class className( db.Model ):
   hit_die = db.Column( db.Integer, nullable = False )
   armor_proficiencies = db.Column( db.String, nullable = False )
   weapon_proficiencies = db.Column( db.String, nullable = False )
+  tools = db.Column ( db.String, nullable = False )
   skill_choice = db.Column( db.String, nullable = False )
   abilities = db.relationship( 'Ability', secondary = class_primary_ability, backref = db.backref( 'className', lazy = 'dynamic' ) )
 
-  def __init__( self, name, short_description, subheading_one, subheading_two, creating_a, quick_build, hit_die, armor_proficiencies, weapon_proficiencies, skill_choice ):
+  def __init__( self, name, short_description, subheading_one, subheading_two, creating_a, quick_build, hit_die, armor_proficiencies, weapon_proficiencies, tools, skill_choice ):
     self.name = name
     self.short_description = short_description
     self.subheading_one = subheading_one
@@ -27,6 +28,7 @@ class className( db.Model ):
     self.hit_die = hit_die
     self.armor_proficiencies = armor_proficiencies
     self.weapon_proficiencies = weapon_proficiencies
+    self.tools = tools
     self.skill_choice = skill_choice
 
   def __repr__( self ):

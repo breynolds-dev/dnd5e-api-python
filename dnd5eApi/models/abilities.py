@@ -1,5 +1,5 @@
 from dnd5eApi import db
-#from dnd5eApi.models.racial_languages import racial_languages
+from dnd5eApi.models.racial_languages import class_primary_ability
 
 class Ability( db.Model ):
   __tablename__ = "ability"

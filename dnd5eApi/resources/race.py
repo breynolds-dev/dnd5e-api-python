@@ -1,57 +1,23 @@
-from flask_restful import Resource, abort
+from flask_restful import Resource
 from flask import jsonify
 
 from dnd5eApi.models.race import Race as RaceModel
+from dnd5eApi.schema.race import race_schema
+from dnd5eApi.schema.race import races_schema
 
-class Race( Resource ):
-  def get( self, race_id = None ):
-    if race_id is None:
-      results = []
-      for row in RaceModel.query.all():
 
-        results.append( {
-          "id": row.id,
-          "name": row.name,
-          "subrace": row.subrace
-        } )
+class Race(Resource):
+    def get(self, id=None):
+        if id is None:
+            results = RaceModel.query.all()
+            races = races_schema.dump(results)
+            return jsonify(races.data)
 
-      return jsonify( results )
+        try:
+            result = RaceModel.query.get(id)
+        except IntegrityError:
+            return jsonify({"message": "Race could not be found."}), 400
 
-    result = RaceModel.query.filter_by( id = race_id ).first()
+        race = race_schema.dump(result)
 
-    if not result:
-      abort( 404 )
-      
-    racial_languages = []
-    for language in result.languages:
-      racial_languages.append( {
-        "id": language.id,
-        "name": language.name,
-        "script": language.script
-      } )
-
-    response = jsonify( {
-      "id": result.id,
-      "name": result.name,
-      "subrace": result.subrace,
-      "desc": result.desc,
-      "speed": result.speed,
-      "min_age": result.min_age,
-      "max_age": result.max_age,
-      "age_description": result.age_description,
-      "alignment": result.alignment,
-      "size": result.size,
-      "size_description": result.size_description,
-      "min_height": result.min_height,
-      "max_height": result.max_height,
-      "min_weight": result.min_weight,
-      "max_weight": result.max_weight,
-      "extra_skill_proficiencies": result.extra_skill_proficiencies,
-      "weapon_proficiencies": result.weapon_proficiencies,
-      "armor_proficiencies": result.armor_proficiencies,
-      "languages": racial_languages
-    } )
-    
-    response.status_code = 200
-
-    return response
+        return jsonify(race.data)

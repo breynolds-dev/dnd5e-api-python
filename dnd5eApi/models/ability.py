@@ -8,7 +8,7 @@ class Ability(db.Model):
     description = db.Column(db.String, nullable=False)
     measures = db.Column(db.String, nullable=False)
     important_for = db.Column(db.String, nullable=False)
-    classes = db.relationship('Class', secondary=class_primary_ability)
+    classes = db.relationship('ClassName', secondary=class_primary_ability)
 
     def __init__(self, name, description, measures, important_for):
         self.name = name

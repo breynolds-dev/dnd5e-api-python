@@ -1,5 +1,4 @@
 from dnd5eApi import db
-#from dnd5eApi.models.racial_languages import racial_languages
 
 
 class Levels(db.Model):

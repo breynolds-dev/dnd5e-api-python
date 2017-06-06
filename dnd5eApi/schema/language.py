@@ -1,7 +1,6 @@
 from marshmallow import Schema, fields
 from dnd5eApi import ma, api
 from dnd5eApi.models.language import Language
-from dnd5eApi.schema.race import RaceSchema
 
 
 class LanguageSchema(Schema):

@@ -1,7 +1,7 @@
 Languages = [
   {
     "name": "Aarakocra",
-    "script": ""
+    "script": None
   },
   {
     "name": "Abyssal",
@@ -25,7 +25,7 @@ Languages = [
   },
   {
     "name": "Deep Speech",
-    "script": ""
+    "script": None
   },
   {
     "name": "Draconic",

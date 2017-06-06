@@ -1,25 +1,22 @@
 import os
 
-from flask import Flask, jsonify
-from flask_restful import Resource, Api, abort
+from flask import Flask
+from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
+from flask_marshmallow import Marshmallow
 
-app = Flask( __name__ )
+app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URL"]
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy( app )
-
-api = Api( app )
+db = SQLAlchemy(app)
+ma = Marshmallow(app)
+api = Api(app, prefix="/v1")
 
 import dnd5eApi.routes.endpoints
 
-# db.reflect()
-# db.drop_all()
-
-# # create the database and the database table
 # db.create_all()
 # db.session.commit()
-
+#
 # import seed_db

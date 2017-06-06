@@ -1,7 +1,7 @@
 from dnd5eApi import db
 
 
-class Levels(db.Model):
+class Level(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     subclass_id = db.Column(db.Integer, nullable=False)
     number = db.Column(db.Integer)

@@ -1,7 +1,7 @@
 from dnd5eApi import db
 
 
-class Feats(db.Model):
+class Feat(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     description = db.Column(db.String, nullable=False)

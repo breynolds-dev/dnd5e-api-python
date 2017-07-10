@@ -1,5 +1,6 @@
-[![Stories in Ready](https://badge.waffle.io/breynolds-dev/dnd5e-api-python.png?label=ready&title=Ready)](https://waffle.io/breynolds-dev/dnd5e-api-python?utm_source=badge)
 # D&D 5e API
+
+[![Stories in Ready](https://badge.waffle.io/breynolds-dev/dnd5e-api-python.png?label=ready&title=Ready)](https://waffle.io/breynolds-dev/dnd5e-api-python?utm_source=badge)
 
 This project started because a friend and I were trying to build a character
 creator in Rails for 5th Edition. With the amount of data required we decided to

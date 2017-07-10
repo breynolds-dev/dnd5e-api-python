@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/breynolds-dev/dnd5e-api-python.png?label=ready&title=Ready)](https://waffle.io/breynolds-dev/dnd5e-api-python?utm_source=badge)
 # D&D 5e API
 
 This project started because a friend and I were trying to build a character

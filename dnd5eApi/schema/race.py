@@ -35,4 +35,4 @@ class RaceSchema(ma.Schema):
 
 
 race_schema = RaceSchema()
-races_schema = RaceSchema(many=True, only=('id', 'name', 'subrace'))
+races_schema = RaceSchema(many=True, only=('id', 'name', 'subrace', 'url'))

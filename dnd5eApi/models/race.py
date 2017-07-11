@@ -1,5 +1,6 @@
 from dnd5eApi import db
 from dnd5eApi.models.racial_languages import racial_languages
+from dnd5eApi.models.racial_ability_bonus import RacialAbilityBonus
 
 
 class Race(db.Model):
@@ -22,6 +23,7 @@ class Race(db.Model):
     weapon_proficiencies = db.Column(db.String)
     armor_proficiencies = db.Column(db.String)
     languages = db.relationship('Language', secondary=racial_languages)
+    ability_bonuses = db.relationship('RacialAbilityBonus', backref="races", primaryjoin= id == RacialAbilityBonus.race_id)
 
     def __init__(self, name, subrace, desc, speed, min_age, max_age, age_description, alignment, size, size_description, min_height, max_height, min_weight, max_weight, extra_skill_proficiencies, weapon_proficiencies, armor_proficiencies):
         self.name = name

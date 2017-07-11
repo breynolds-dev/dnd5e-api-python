@@ -1,98 +1,144 @@
-ClassSavingThrow = [
-{
-  "class_name": "Barbarian",
-  "ability": "Strength"
-},
-{
-  "class_name": "Barbarian",
-  "ability": "Constitution"
-},
-{
-  "class_name": "Bard",
-  "ability": "Dexterity"
-},
-{
-  "class_name": "Bard",
-  "ability": "Charisma"
-},
-{
-  "class_name": "Cleric",
-  "ability": "Wisdom"
-},
-{
-  "class_name": "Cleric",
-  "ability": "Charisma"
-},
-{
-  "class_name": "Druid",
-  "ability": "Intelligence"
-},
-{
-  "class_name": "Druid",
-  "ability": "Wisdom"
-},
-{
-  "class_name": "Fighter",
-  "ability": "Strength"
-},
-{
-  "class_name": "Fighter",
-  "ability": "Constitution"
-},
-{
-  "class_name": "Monk",
-  "ability": "Strength"
-},
-{
-  "class_name": "Monk",
-  "ability": "Dexterity"
-},
-{
-  "class_name": "Paladin",
-  "ability": "Wisdom"
-},
-{
-  "class_name": "Paladin",
-  "ability": "Charisma"
-},
-{
-  "class_name": "Ranger",
-  "ability": "Strength"
-},
-{
-  "class_name": "Ranger",
-  "ability": "Dexterity"
-},
-{
-  "class_name": "Rogue",
-  "ability": "Dexterity"
-},
-{
-  "class_name": "Rogue",
-  "ability": "Intelligence"
-},
-{
-  "class_name": "Sorcerer",
-  "ability": "Constitution"
-},
-{
-  "class_name": "Sorcerer",
-  "ability": "Charisma"
-},
-{
-  "class_name": "Warlock",
-  "ability": "Wisdom"
-},
-{
-  "class_name": "Warlock",
-  "ability": "Charisma"
-},
-{
-  "class_name": "Wizard",
-  "ability": "Intelligence"
-},
-{
-  "class_name": "Wizard",
-  "ability": "Wisdom"
-}
-]
+def CreateClassSavingThrowsRelationship(db, ClassName, Ability):
+    class_name = ClassName.query.filter_by(name="Barbarian").first()
+    ability = Ability.query.filter_by(name="Strength").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Barbarian").first()
+    ability = Ability.query.filter_by(name="Constitution").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Bard").first()
+    ability = Ability.query.filter_by(name="Dexterity").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Bard").first()
+    ability = Ability.query.filter_by(name="Charisma").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Cleric").first()
+    ability = Ability.query.filter_by(name="Wisdom").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Cleric").first()
+    ability = Ability.query.filter_by(name="Charisma").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Druid").first()
+    ability = Ability.query.filter_by(name="Intelligence").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Druid").first()
+    ability = Ability.query.filter_by(name="Wisdom").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Fighter").first()
+    ability = Ability.query.filter_by(name="Strength").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Fighter").first()
+    ability = Ability.query.filter_by(name="Constitution").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Monk").first()
+    ability = Ability.query.filter_by(name="Strength").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Monk").first()
+    ability = Ability.query.filter_by(name="Dexterity").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Paladin").first()
+    ability = Ability.query.filter_by(name="Wisdom").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Paladin").first()
+    ability = Ability.query.filter_by(name="Charisma").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Ranger").first()
+    ability = Ability.query.filter_by(name="Strength").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Ranger").first()
+    ability = Ability.query.filter_by(name="Dexterity").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Rogue").first()
+    ability = Ability.query.filter_by(name="Dexterity").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Rogue").first()
+    ability = Ability.query.filter_by(name="Intelligence").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Sorcerer").first()
+    ability = Ability.query.filter_by(name="Constitution").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Sorcerer").first()
+    ability = Ability.query.filter_by(name="Charisma").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Warlock").first()
+    ability = Ability.query.filter_by(name="Wisdom").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Warlock").first()
+    ability = Ability.query.filter_by(name="Charisma").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Wizard").first()
+    ability = Ability.query.filter_by(name="Intelligence").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))
+
+    class_name = ClassName.query.filter_by(name="Wizard").first()
+    ability = Ability.query.filter_by(name="Wisdom").first()
+    class_name.saving_throws.append(ability)
+    db.session.merge(class_name)
+    print("<ClassSavingThrow: {} - {}>".format(class_name.name, ability.name))

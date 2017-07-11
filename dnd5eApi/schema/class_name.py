@@ -6,7 +6,7 @@ from dnd5eApi.models.class_name import ClassName
 class ClassNameSchema(Schema):
     id = fields.Int()
     name = fields.Str()
-    url = ma.AbsoluteURLFor('class_name', id='<id>')
+    url = ma.AbsoluteURLFor('classname', id='<id>')
     short_description = fields.Str()
     subheading_one = fields.Str()
     subheading_two = fields.Str()
@@ -17,9 +17,14 @@ class ClassNameSchema(Schema):
     weapon_proficiencies = fields.Str()
     tools = fields.Str()
     skill_choice = fields.Str()
-    ability = fields.Nested(
+    abilities = fields.Nested(
         'AbilitySchema',
-        only=['id', 'name', 'url'])
+        only=['id', 'name', 'url'],
+        many=True)
+    saving_throws = fields.Nested(
+        'AbilitySchema',
+        only=['id', 'name', 'url'],
+        many=True)
 
 
 class_name_schema = ClassNameSchema()

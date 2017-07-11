@@ -1,4 +1,4 @@
-Ability = [
+Abilities = [
     {
         "name": "Strength",
         "description": "A character with high Strength usually corresponds with a burly or athletic body, while a character with low Strength might be scrawny or plump.",

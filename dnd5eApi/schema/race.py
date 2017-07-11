@@ -2,6 +2,8 @@ from marshmallow import Schema, fields
 from dnd5eApi import ma
 from dnd5eApi.models.race import Race as RaceModel
 
+from dnd5eApi.schema.racial_ability_bonus import RacialAbilityBonusSchema
+
 
 class RaceSchema(ma.Schema):
     id = fields.Integer()
@@ -26,6 +28,9 @@ class RaceSchema(ma.Schema):
     languages = fields.Nested(
         'LanguageSchema',
         only=['id', 'url', 'name'],
+        many=True)
+    ability_bonuses = fields.Nested(
+        'RacialAbilityBonusSchema',
         many=True)
 
 
